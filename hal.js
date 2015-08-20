@@ -128,9 +128,9 @@
    * @param String rel → the relation identifier (should be plural)
    * @param Resource|Resource[] → resource(s) to embed
    */
-  Resource.prototype.embed = function (rel, resource) {
+  Resource.prototype.embed = function (rel, resource, pluralize) {
     // [Naive pluralize](https://github.com/naholyr/js-hal#why-this-crappy-singularplural-management%E2%80%AF)
-    if (rel.substring(rel.length - 1) !== 's') {
+    if (pluralize && rel.substring(rel.length - 1) !== 's') {
       rel += 's';
     }
 
